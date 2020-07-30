@@ -1,41 +1,56 @@
 # Scope
 
-Try to restrict the scope, the lifespan, of a variable as much as possible. That way you let go of unused memory as fast as possible, but more importantly you do not clutter the namespace with unused variables. That makes it just a little easier to find names for new variables, without resorting to names like `new_count` and `user2`.
+From earlier, you know that you can declare, initialize and assign variables at various points in your programs.
+At some point in the development of programming languages, it was needed to at least declare all variables at the top of a file or function.
+With current compilers, this is not needed at all.
+Instead, it is now common to declare and initialize variables as **late** as possible.
+For example, you have seen `for`-loops where the loop variable is declared inside the loop:
 
-For instance, take this for-loop:
-
-    int i;
-    for (i = 0; i < 10; i++) {
-        printf("hello");
+    for (int i = 0; i < 10; i++)
+    {
+        ...
     }
 
-Here the variable `i` continues to exist beyond the body of the for-loop, even though it probably won't see any use. So do this instead of the above:
+Doing it like that even helps you prevent programming errors.
+For example, if we try to print the variable `i` after the loop terminates, we get an error *while compiling*.
+This error helps us understand that our idea for a solution might not be quite correct, yet.
 
-    for (int i = 0; i < 10; i++) {
-        printf("hello");
+    printf("%d\n", i);   // use of undeclared identifier
+
+Say we are using a loop to calculate a sum and we want to print that.
+We then need to declare the variable **outside** the loop, lest we get the same error as above.
+So, we decide that we *need* to access that variable later and we make an intentional decision about the scope of that variable.
+
+    int sum = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        sum += array[i];
     }
-
+    printf("%d\n", sum);
 
 ## Late declaration
 
-Try to declare your variables as late as possible by moving your variables as close as possible to the code where it's actually used. Not only does this make your code easier to read, it also makes it much easier to spot which pieces of code are independent of each other.
+The above is about `for`-loops but declaring late is something you should always consider. Not only does this make your code easier to read, it also makes it much easier to spot which pieces of code are **independent** of each other.
 
 So don't do this:
 
-    void my_function()
+    int main(void)
     {
         int count = 0;
         // code
+        // ...
         // some more code
         count += 1;
     }
 
 But do this:
 
-    void my_function()
+    int main(void)
     {
         // code
         // some more code
+        
+        // count has nothing to do with the code above!
         int count = 0;
         count += 1;
     }
@@ -43,53 +58,10 @@ But do this:
 
 ## Global variables
 
-Global variables, variables that are kept around for the entirety of your program, can make your code a nightmare to debug and understand. Especially so if the value in that global variable changes! Take this program:
+The ultimate early declaration is having a variable that is declared outside of any function, including `main`. Such variables are called **global**, in that they can be accessed from any function. Global variables are rarely needed. Sometimes, a set of functions can share a single global variable that contains the main data of the program, like in a game. In other cases, it might be better to avoid globals and pass some of the data to other functions as **parameters**.
 
-    int answer = 42;
+## Learn more
 
-    void foo()
-    {
-        answer += 1;
-    }
+Want to know more about declaring variables? Have a look at this chapter:
 
-    void bar()
-    {
-        answer *= 2;
-    }
-
-    int main()
-    {
-        foo();
-        bar();
-        printf("%d\n", answer); // prints 86
-    }
-
-Now if we swap the two function calls...
-
-int main()
-{
-    bar();
-    foo();
-    printf("%d\n", answer); // prints 85
-}
-
-We end up with a different output! Now this program is small and manageable, but do just imagine trying to trace this outcome in a couple 1000 lines of code and you can see why the use of global variables is generally frowned upon. So instead, lets remove the global variable and parameterize the functions:
-
-    int foo(int answer)
-    {
-        return answer + 1;
-    }
-
-    int bar(int answer)
-    {
-        return answer * 2;
-    }
-
-    int main()
-    {
-        int answer = foo(42);
-        answer = bar(answer);
-        printf("%d\n", answer); // prints 86
-    }
-
-Globals, guilty until proven innocent. There are often better ways to restructure your program to avoid the use of global variables. But, nothing is ever binary in software design. You might need access to a bit of static data in nearly every part of your code. In that case, a global constant variable might just be what you're looking for. Or say that your entire program revolves around some global variable keeping state? Well, you could opt to pass that global as a parameter to every function you write, but does that truly make your code that much easier to understand over just having one global around?
+- Steve McConnell, *Code complete: a practical handbook of software construction*. Chapter 10, *General issues in using variables*. Microsoft Press, 2004.
