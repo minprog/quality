@@ -73,7 +73,7 @@ And don't do this:
     y = 7
 
     if x > 10:
-        x /= 2;
+        x /= 2
 
     else
         y *= 2
