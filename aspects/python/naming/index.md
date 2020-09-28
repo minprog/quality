@@ -76,7 +76,7 @@ Also, if you need more than two or three nested loops, it might be time to rethi
 
 When assigning values to multiple variables at once, it's fine to declare them together, as in:
 
-	a, b = 100, 100
+    a, b = 100, 100
 
 You can also assign them different variables. Moreover, it is also possible to assign to different types:
 

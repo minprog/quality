@@ -48,7 +48,6 @@ In this case, notice that you can *remove* the `else` block altogether, placing 
     if length <= 0:
         print("Please enter a positive integer.")
         sys.exit()
-    }
 
     length = length * 10
     printf(length)

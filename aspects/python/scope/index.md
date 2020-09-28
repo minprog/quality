@@ -6,27 +6,6 @@ With current compilers, this is not needed at all.
 Instead, it is now common to declare and initialize variables as **late** as possible.
 For example, you have seen `for`-loops where the loop variable is declared inside the loop:
 
-    for i in range(10):
-        # do something
-
-Doing it like that even helps you prevent programming errors.
-For example, if we try to print the variable `i` after the loop terminates, we get an error *while compiling*.
-This error helps us understand that our idea for a solution might not be quite correct, yet.
-
-    # use of undeclared identifier
-    printf(i)
-
-Say we are using a loop to calculate a sum and we want to print that.
-We then need to declare the variable **outside** the loop, lest we get the same error as above.
-So, we decide that we *need* to access that variable later and we make an intentional decision about the scope of that variable.
-
-    sum = 0
-
-    for i in range(10):
-        sum += i
-
-    print(sum)
-
 ## Late declaration
 
 The above is about `for`-loops but declaring late is something you should always consider. Not only does this make your code easier to read, it also makes it much easier to spot which pieces of code are **independent** of each other.
