@@ -80,20 +80,20 @@ Consider what David tends to do:
      Sings about a number, b, of bottles.
     """
     
-    s1 = "bottles"
-    s2 = "bottles"
+        s1 = "bottles"
+        s2 = "bottles"
 
-    # use singular form if needed
-    if b == 1:
-        s1 = "bottle"
-    if b == 2:
-        s2 = "bottle"
+        # use singular form if needed
+        if b == 1:
+            s1 = "bottle"
+        if b == 2:
+            s2 = "bottle"
 
-    # sing verses
-    print(f"{b} {s1} of beer on the wall,")
-    print(f"{b} {s1} of beer,")
-    print("Take one down, pass it around,")
-    print(f"{b - 1} {s2} of beer on the wall.\n")
+        # sing verses
+        print(f"{b} {s1} of beer on the wall,")
+        print(f"{b} {s1} of beer,")
+        print("Take one down, pass it around,")
+        print(f"{b - 1} {s2} of beer on the wall.\n")
 
 This example is also nice because it demonstrates splitting up a function's code into three separate parts. The second and third part get their own summarizing comment that explains, in plain English, what the code will do when run.
 
