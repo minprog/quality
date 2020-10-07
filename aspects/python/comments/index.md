@@ -62,13 +62,13 @@ you can also add a multiline string in your code by using triple-quotes, and pla
 Note that using this method inside of functions can lead to errors!
 
     """
-     hello.py
+    hello.py
+    
+    Computer Science 50
+    David J. Malan
      
-     Computer Science 50
-     David J. Malan
-     
-     - Says hello to the world.
-     - Demonstrates use of printf.
+    - Says hello to the world.
+    - Demonstrates use of printf.
     """
 
 Atop each of your functions (except, perhaps, main) should be multi-line comments
@@ -77,7 +77,7 @@ Consider what David tends to do:
 
     def chorus(b):
     """
-     Sings about a number, b, of bottles.
+    Sings about a number, b, of bottles.
     """
     
     s1 = "bottles"
