@@ -76,18 +76,18 @@ that summarize what your function does along with, perhaps, its signature.
 Consider what David tends to do:
 
     def chorus(b):
-    """
-     Sings about a number, b, of bottles.
-    """
+        """
+         Sings about a number, b, of bottles.
+        """
     
-    s1 = "bottles"
-    s2 = "bottles"
+        s1 = "bottles"
+        s2 = "bottles"
 
-    # use singular form if needed
-    if b == 1:
-        s1 = "bottle"
-    if b == 2:
-        s2 = "bottle"
+        # use singular form if needed
+        if b == 1:
+            s1 = "bottle"
+        if b == 2:
+            s2 = "bottle"
 
     # sing verses
     print(f"{b} {s1} of beer on the wall,")
