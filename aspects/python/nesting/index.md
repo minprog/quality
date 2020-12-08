@@ -64,7 +64,7 @@ Especially in object oriented programming, you may sometimes want to write some 
         else:
             return False
             
-This function can be simplified quite a bit. Notice you can immeditately return the result of a boolean expression, without using `if`-statements at all:
+This function can be simplified quite a bit. Notice you can immediately return the result of a boolean expression, without using `if`-statements at all:
 
     def letter_in_word(self, letter):
         return letter in self.word
