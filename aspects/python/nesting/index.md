@@ -54,6 +54,51 @@ In this case, notice that you can *remove* the `else` block altogether, placing 
 
 The reason here is that we use `sys.exit()`. If the condition is met, we stop the program. So it is **impossible**, even without the `else` that the algorithm is executed with an invalid input. Rule of thumb: `exit` early!
 
+## Boolean expressions
+
+Especially in object oriented programming, you may sometimes want to write some function which returns whether or not a certain condition is true:
+
+    def letter_in_word(self, letter):
+        if letter in self.word:
+            return True
+        else:
+            return False
+            
+This function can be simplified quite a bit. Notice you can immediately return the result of a boolean expression, without using `if`-statements at all:
+
+    def letter_in_word(self, letter):
+        return letter in self.word
+        
+## Conditional return
+
+You may also need to write a function which, instead of a boolean, needs to return a certain text based on a condition:
+
+    def too_many_items(self):
+        result = ""
+        
+        if len(self.items) > 1000:
+            result = "There are too many items!"
+        else:
+            result = "You're fine, there's room for more items!"
+        
+        return result
+        
+Within a larger block of code, this way of setting a string would be completely reasonable. However, a function can `return`, which can make our implementation a bit more compact:
+
+    def too_many_items(self):
+        if len(self.items) > 1000:
+            return "There are too many items!"
+        return "You're fine, there's plenty of room for more items!"
+        
+Also note that, similarly to above under 'early exit', you don't even need an `else` block. A `return` immediately terminates the function, so getting to the second `return` if there are fewer than 1000 items is already impossible.
+
+If your text and condition are short enough, you can even use Python's equivalent of a ternary operator:
+
+    def awesome_text(self):
+        return "Awesome!" if self.awesome else "Not awesome :-("
+        
+In general, try to return as quickly as you can in a function. This will keep your code more compact and improves readability.
+
 ## Learn more
 
 Want to know more about writing simply structured code? Have a look at these chapters:
