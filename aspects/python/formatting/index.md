@@ -95,6 +95,26 @@ But do this, i.e. grouping related statements:
     if y == 7:
         y = 0
 
+## Line length
+
+Placing spaces around each operator and using good variable names may result in lines of code that have become pretty long. Generally speaking, we'd like to keep lines of code under 100 characters. It's pretty easy to split long comments into multiple lines, but for long expressions it's a bit harder. Consider this long expression:
+
+    average_temperature = (sum_of_minima + sum_of_maxima) / num_measurements / 2
+
+This is not extremely long but you can see where this is going. Now, how do you break up such an expression? The first way is to split it up after the assignment operator:
+
+    average_temperature =
+        (sum_of_minima + sum_of_maxima) / num_measurements / 2
+
+For this expression it suffices. Note the additional indentation of the second line, which helps the reader to immediately identify the line as being a continuation.
+
+Alternatively, you could do something like this:
+
+    average_temperature = (sum_of_minima + sum_of_maxima) /
+                              num_measurements / 2
+
+In many cases it doesn't quite matter where you break the line, because Python can infer that the lines belong together. Do remember that you're doing this to make your code more readable! So try to find a way that focuses the code reader's eye and makes your code easy to read.
+
 ## Learn more
 
 Want to know more about writing neatly formatted code? Have a look at these chapters:
