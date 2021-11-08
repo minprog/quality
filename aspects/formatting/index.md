@@ -37,10 +37,11 @@ To make it easier for yourself, we recommend that you check that your editor is 
 > You can check that your code is indented correctly using `style50`.
 > You can find instructions on using `style50` alongside the problem specifications.
 
+
 ## Spaces
 
 Consistent use of spaces makes expressions and statements easier to read.
-To get started, we ask that you use the following rules consistently:
+To get started, you are required to use the following rules consistently, because these are standard *conventions* in C.
 
 - Use a space around every binary operator.
 
@@ -60,6 +61,9 @@ To get started, we ask that you use the following rules consistently:
 
         printf("foo");
         int answer = atoi("42");
+
+> You can check that your code is spaced correctly using `style50`.
+> You can find instructions on using `style50` alongside the problem specifications.
 
 
 ## Placing brackets
@@ -155,6 +159,8 @@ But do this, i.e. grouping related statements:
     {
         y = 0;
     }
+
+Note that last blank line! The final `if`-statement is not directly related to the `if`-`else`-combo above.
 
 ## Line length
 
