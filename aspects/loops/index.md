@@ -1,4 +1,4 @@
-# Loops
+# Control Flow
 
 Now that you have seen a number of algorithms using loops, this is the time wonder how to choose what kind of loop you might use for a given problem. The reason that this is a more complicated question than you might have thought is that all kinds of loops can be made equivalent. Consider these three loops, all of which count from 0 to 9:
 
@@ -33,21 +33,15 @@ Prefer a `for`-loop to a `while`-loop when there is an obvious loop variable, or
 
 ## While
 
-Prefer a `while`-loop to a `for`-loop when there is no obvious loop variable. You might want to run a loop until some condition becomes false: perfect for a `while`-loop. The following example uses a **flag variable** to control an input loop. Because it relies on user input, we can't predict how often the loop will run before it should be terminated.
+Prefer a `while`-loop to a `for`-loop when there is no obvious loop variable. You might want to run a loop until some condition becomes false: perfect for a `while`-loop.
 
-    bool running = true;
-    while(running)
-    {
-        printf("Enter 999 to stop: ");
-        int command = get_int();
-        
-        if(command == 999)
-        {
-            running = false;
-        }
-    }
+## Do-While
 
-> A `do-while`-loop is a bit harder to understand because the condition is on the last line of the loop. You can even terminate a loop right in the middle by using the `break` statement in the loop block. Because this makes it ever harder to determine the terminating condition, we recommend to avoid it.
+A `do-while`-loop is a bit harder to understand because the condition is on the last line of the loop. We recommend to avoid it unless it is for a standard purpose, such as asking for user input *at least once*.
+
+## Stopping a loop
+
+You can even terminate a loop right in the middle by using the `break` statement in the loop block. Sometimes this is needed when working with user input. Because this makes it ever harder to determine the terminating condition, we recommend to avoid it and try to make the loop body as small as possible.
 
 ## Learn more
 
