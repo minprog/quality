@@ -50,6 +50,8 @@ If you study the above example well, you may figure out that higher discounts ar
         discount = 0;
     }
 
+To come up with such an improvement requires a deep understanding of the problem that the program solves, as well as some fluency with using control structures such as `if`-`else if`-`else`.
+
 ## Early exit
 
 You might need to check some condition, and if not satisfied, run the rest of your program:
@@ -76,7 +78,7 @@ In this case, notice that you can *remove* the `else` block altogether, placing 
     length = length * 10;
     printf("%i\n", length);
 
-The reason here is that we use `return`. If the condition is met, we stop the program. So it is **impossible**, even without the `else` that the algorithm is executed with an invalid input. Rule of thumb: `return` early!
+The reason here is that we use `return`. If the condition is met, we stop the program. So it is **impossible**, even without the `else`, that the algorithm is executed with an invalid input. Rule of thumb: `return` early!
 
 ## Factoring out a function
 
