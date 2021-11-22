@@ -78,6 +78,10 @@ In this case, notice that you can *remove* the `else` block altogether, placing 
 
 The reason here is that we use `return`. If the condition is met, we stop the program. So it is **impossible**, even without the `else` that the algorithm is executed with an invalid input. Rule of thumb: `return` early!
 
+## Factoring out a function
+
+A final way to remove nesting is to create a function that performs one part of the task at hand. However, try to simplify your code before doing that. It might not even be needed.
+
 ## Learn more
 
 Want to know more about writing simply structured code? Have a look at these chapters:
