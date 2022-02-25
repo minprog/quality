@@ -55,7 +55,8 @@ It might be tempting to just write the literal value in your code somewhere and 
 
 ## Loops
 
-Loops are a special case. Sometimes it's clear from a comment what the loop is supposed to do, but it's hard to think of a name for the **loop counter**. In that case, it is conventional to use the name `i`, then `j`, then `k`.
+Loops are a special case.
+Sometimes it's clear from a comment what the loop is supposed to do, but it's hard to think of a name for the **loop counter**.
 
     for (int i = 0; i < LIMIT; i++)
     {
@@ -69,8 +70,17 @@ Loops are a special case. Sometimes it's clear from a comment what the loop is s
     }
 
 However, it is quite uncommon that no valid names can be found for the loop counters.
+Take inspiration from the problem that is being solved, and also from examples in lectures and exercises. Some additional examples:
+
+    number_of_books
+    num_books
+    bird_count
+
+Also, when working on geometry or other maths problems, you might use variable names like `x` and `y`.
+But if a name can be more concrete, make it so!
+
 In all cases, make sure that from the combination of names and comments it is very clear what the purpose of the loop is and what the role of each variable is.
-Also, if you need more than two or three nested loops, it might be time to rethink your approach.
+Finally, if you need more than two nested loops, it might be time to rethink your approach.
 
 > Note that above, the 0 could in a strict sense be called a magic number. But it isn't because starting a loop at 0 is so common in C that it is **expected**. Replacing it with a constant will only confuse readers.
 
@@ -79,7 +89,9 @@ Also, if you need more than two or three nested loops, it might be time to rethi
 
 When declaring multiple variables of the same type at once, it's fine to declare them together, as in:
 
-	int quarters, dimes, nickels, pennies;
+    int quarters, dimes, nickels, pennies;
+
+However, only do this if the variables are clearly from a series, like the coin types in the example.
 
 
 ## Learn more
