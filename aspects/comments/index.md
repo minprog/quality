@@ -90,7 +90,7 @@ Consider what David tends to do:
         printf("%d %s of beer on the wall.\n\n", b - 1, s2);
     }
 
-This example is also nice because it demonstrates splitting up a function's code into three separate parts. The second and third part get their own summarizing comment that explains, in plain English, what the code will do when run.
+This example also nicely demonstrates splitting up a function's code into three separate parts. The second and third part get their own summarizing comment that explains, in plain English, what the code will do when run.
 
 ## Cleaning up
 
