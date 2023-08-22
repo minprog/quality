@@ -3,14 +3,14 @@
 Now that you have seen a number of algorithms using loops, this is the time wonder how to choose what kind of loop you might use for a given problem. The reason that this is a more complicated question than you might have thought is that all kinds of loops can be made equivalent. Consider these three loops, all of which count from 0 to 9:
 
     // version 1
-    for(int i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++)
     {
         printf("%d\n", i);
     }
 
     // version 2
     int i = 0;
-    while(i < 10)
+    while (i < 10)
     {
         printf("%d\n", i);
         i++;
