@@ -1,6 +1,6 @@
 # Comments
 
-There are multiple reasons that comments make code easier to understand.
+There are multiple ways through which comments make code easier to understand.
 One is that time may pass before you look at your code again: hours, days, weeks, months, or even years.
 If you then decide you want to reuse some parts of it, or get it going again, you will need a little bit of help understanding.
 The code itself is great at telling you every tiny bit of detail, because that is exactly what a programming language has you do.
